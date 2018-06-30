@@ -26,20 +26,11 @@
     </div>
 
     <div class="container">
-            <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Dropdown button
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
+            
         <ol>
-        {% for i in articles.articles %}
+        {% for i in headl.articles %}
         
-        <li><img src="{{i.urlToImage}}" alt="" style="width:60px;height:50px;"><a href="{{i.url}}"><p>{{ i.title }}</p></a></li> 
+        <li><img src="{{i.urlToImage}}" alt="" style="width:120px;height:90px;"><a href="{{i.url}}"><p>{{ i.title }}</p></a></li> 
 
         
         
