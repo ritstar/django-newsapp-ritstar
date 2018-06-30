@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RitstaR</title>
+
+    {# Load the tag library #}
+    {% load bootstrap3 %}
+
+    {# Load CSS and JavaScript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+
+        <h1 style="color: red;">News App : Made by:- RitstaR</h1>
+        <!--p>Type <a href="http://127.0.0.1:8000/form">/form</a> to go to form page</p-->
+        </div>
+    </div>
+
+    <div class="container">
+            <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dropdown button
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+        <ol>
+        {% for i in articles.articles %}
+        
+        <li><img src="{{i.urlToImage}}" alt="" style="width:60px;height:50px;"><a href="{{i.url}}"><p>{{ i.title }}</p></a></li> 
+
+        
+        
+          
+        
+        {% endfor %}
+    </ol>
+    </div>
+
+
+  
+</body>
+</html>

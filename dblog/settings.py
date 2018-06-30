@@ -14,6 +14,8 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TEMPLATE_DIR = os.path.join(BASE_DIR,"templates")
+print(TEMPLATE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,7 +29,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+#For SMTP Email
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'riteshjha02700@gmail.com'
+EMAIL_HOST_PASSWORD = '18azerty.pad'
+EMAIL_PORT = 587
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,6 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ritesh',
+    'bootstrap3',
+    'newsapi',
 ]
 
 MIDDLEWARE = [
@@ -47,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'dblog.urls'
@@ -54,7 +65,7 @@ ROOT_URLCONF = 'dblog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
