@@ -30,13 +30,5 @@ def public_news(request):
 
 def form_view(request):
     form = forms.FormName()
-    if request.method == 'POST':
-        name = request.POST.get('name','')
-        email = request.POST.get('email','')
-        text = request.POST.get('text','')
-        emails = EmailMessage("New Post",text,"NotesBABA"+'Mail',[email])
-        emails.send()
-        print('Email Sent')
-        #return redirect('form/form_view')
 
     return render(request,'form/form_view.html',{'forms' : form})
