@@ -8,4 +8,5 @@ urlpatterns = [
     path('rit/',include('ritesh.urls')),
     path('admin/', admin.site.urls),
     path('form/',views.form_view),
+    path('public-news/',views.public_news),
 ]

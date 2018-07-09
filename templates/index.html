@@ -6,21 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RitstaR</title>
 
-    {# Load the tag library #}
+    {# Loading Bootstrap library #}
     {% load bootstrap3 %}
-
-    {# Load CSS and JavaScript #}
+    {# Loading CSS and JavaScript #}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
-
     {# Display django.contrib.messages as Bootstrap alerts #}
     {% bootstrap_messages %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"> </script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
     <div class="container">
         <div class="jumbotron">
 
         <h1 style="color: red;">News App : Made by:- Ritesh And Abhay</h1>
+        <h3>Categories: <a href="#">Tech News</a>  <a href="http://127.0.0.1:8000/public-news">Worldwide News</a></h3>
         
         </div>
     </div>
@@ -29,17 +34,13 @@
 
 
     <div class="container">
-            
+        <h2>Top 20 Tech Headlines</h2>            
         <ol>
         {% for i in headl.articles %}
         
         <li><img src="{{i.urlToImage}}" alt="" style="width:120px;height:90px;"><a href="{{i.url}}" style="font-size:20px;">    {{ i.title }}</a></li>
         <br><br> 
 
-        
-        
-          
-        
         {% endfor %}
     </ol>
     </div>
