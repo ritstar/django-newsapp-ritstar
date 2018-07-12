@@ -6,10 +6,12 @@ from . import forms
 from newsapi import NewsApiClient
 from django.core.mail import EmailMessage
 # Create your views here.
-newsapi = NewsApiClient(api_key='23f1ea61ddf444d7b98b68f746262f26')
-top_headlines = newsapi.get_top_headlines(category='technology',language='en',country='in')
-all_articles = newsapi.get_everything(sources='bbc-news,the-verge,crypto coins news',language='en',sort_by='relevancy',page=2,)
-
+try:
+    newsapi = NewsApiClient(api_key='23f1ea61ddf444d7b98b68f746262f26')
+    top_headlines = newsapi.get_top_headlines(category='technology',language='en',country='in')
+    all_articles = newsapi.get_everything(sources='bbc-news,the-verge,crypto coins news',language='en',sort_by='relevancy',page=2,)
+except Exception:
+    print("Troubling Problem..............")
 def index(request):
     try:
         url = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=23f1ea61ddf444d7b98b68f746262f26';

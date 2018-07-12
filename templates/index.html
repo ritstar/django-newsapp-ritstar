@@ -24,28 +24,23 @@
     <div class="container">
         <div class="jumbotron">
 
-        <h1 style="color: red;">News App : Made by:- Ritesh And Abhay</h1>
+        <h1 style="color: red;">News App : Created by:- Ritesh And Abhay</h1>
         <h3>Categories: <a href="#">Tech News</a>  <a href="http://127.0.0.1:8000/public-news">Worldwide News</a></h3>
         
         </div>
     </div>
-
-    
-
-
-    <div class="container">
-        <h2>Top 20 Tech Headlines</h2>            
-        <ol>
-        {% for i in headl.articles %}
-        
-        <li><img src="{{i.urlToImage}}" alt="" style="width:120px;height:90px;"><a href="{{i.url}}" style="font-size:20px;">    {{ i.title }}</a></li>
-        <br><br> 
-
-        {% endfor %}
-    </ol>
+<div class="container">
+        <h2>Top 20 Tech Headlines</h2>
+    <div class="list-group">
+            <ol>
+            {% for i in headl.articles %}
+            <li><a href="{{i.url}}" style="font-size:20px;" target="_blank" class="list-group-item list-group-item-action"><img src="{{i.urlToImage}}" alt="" style="width:120px;height:90px;">     {{ i.title }}</a></li>
+      
+            {% endfor %}
+            </ol>
+        </div>
     </div>
-
-
+    
   
 </body>
 </html>

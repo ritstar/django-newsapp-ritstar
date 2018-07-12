@@ -5,20 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RitstaR</title>
+    {# Loading Bootstrap library #}
+    {% load bootstrap3 %}
+    {# Loading CSS and JavaScript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" ></script>
-    
 </head>
 <body>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"> </script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 
     <div class="container">
         <div class="jumbotron">
 
-        <h1 style="color: red;">News App : Made by:- Ritesh And Abhay</h1>
+        <h1 style="color: red;">News App : Created by:- Ritesh And Abhay</h1>
         <h3>Categories: <a href="http://127.0.0.1:8000/">Tech News</a>  <a href="#">Worldwide News</a></h3>
         
         </div>
@@ -28,16 +34,16 @@
 
 
     <div class="container">
-        <h2>Top 20 Worldwide Headlines</h2>            
-        <ol>
-        {% for i in articles.articles %}
-        
-        <li><img src="{{i.urlToImage}}" alt="" style="width:120px;height:90px;"><a href="{{i.url}}" style="font-size:20px;">    {{ i.title }}</a></li>
-        <br><br> 
-
-        {% endfor %}
-    </ol>
-    </div>
+            <h2>Top 20 Worldwide Headlines</h2>
+        <div class="list-group">
+                <ol>
+                {% for i in articles.articles %}
+                <li><a href="{{i.url}}" style="font-size:20px;" target="_blank" class="list-group-item list-group-item-action"><img src="{{i.urlToImage}}" alt="" style="width:120px;height:90px;">     {{ i.title }}</a></li>
+          
+                {% endfor %}
+                </ol>
+            </div>
+        </div>
 
 
   
