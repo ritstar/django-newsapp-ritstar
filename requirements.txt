@@ -2,4 +2,4 @@ newsapi_python==0.2.3
 Django==2.0.5
 requests==2.17.1
 newsapi==0.1.1
-python==3.0.0s
+
