@@ -4,7 +4,7 @@ import requests;
 import json;
 from . import forms
 from newsapi import NewsApiClient
-from django.core.mail import EmailMessage
+from django.core.mail import send_mail
 # Create your views here.
 try:
     newsapi = NewsApiClient(api_key='23f1ea61ddf444d7b98b68f746262f26')
@@ -34,3 +34,25 @@ def form_view(request):
     form = forms.FormName()
 
     return render(request,'form/form_view.html',{'forms' : form})
+
+def mail_me(request):
+    
+    body = list()
+    for i in top_headlines['articles']:
+        body.append(i['title'])
+    j=1
+    body_s = str()
+    for i in body:
+        body_s = body_s + str(j) + ". " + i + '\n'
+        j=j+1   
+    form_mail= forms.mailme()
+    if request.method == 'POST':
+        #email = EmailMessage("Headlines",'body[0]',request.POST['email'])
+        try:
+            send_mail('Headlines', body_s, 'ritesh02700@gmail.com', [request.POST['email']])
+            return HttpResponse("Email Sent")
+        except Exception:
+            return HttpResponse("Email Not Sent : Fatal Error")
+
+
+    return render(request,'mail_me.html',context={'form_mail': form_mail})

@@ -9,4 +9,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('form/',views.form_view),
     path('public-news/',views.public_news),
+    path('mail_me',views.mail_me),
 ]
