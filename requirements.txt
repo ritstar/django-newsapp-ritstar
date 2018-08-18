@@ -1,4 +1,19 @@
+<<<<<<< HEAD
 requests==2.17.1
 Django==2.0.5
 newsapi_python==0.2.3
 newsapi==0.1.1
+=======
+Django==1.9.8
+dj-database-url==0.3.0
+dj-static==0.0.6
+gunicorn==19.6.0
+Unipath==1.0
+python-decouple==3
+Markdown==2.6.6
+bleach==1.4.3
+psycopg2==2.6.1
+whitenoise==3.2
+newsapi-python
+django-bootstrap3
+>>>>>>> e4382b7ce529b0c405c85651f70cfe035a3308af
